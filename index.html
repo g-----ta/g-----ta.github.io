@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>文字数チェック</title>
+	<style>
+	#memo {
+		width: 500px;
+		height: 150px;
+	}
+	#text_q {
+		margin: 100px auto;
+		-webkit-transition: all 1s;
+		-moz-transition: all 1s;
+		-ms-transition: all 1s;
+		-o-transition: all 1s;
+		transition: all 1s;
+		opacity: 0;		
+	}
+	#text_q:hover {
+		opacity: 1;
+	}	
+	</style>
+	
+</head>
+<body>
+	<h1>文字数チェック</h1>
+	<textarea id="memo"></textarea>
+	<div id="count">0</div>
+	<p>
+		<input type="button" id="clear" value="消去">
+		<input type="button" id="full" value="集中モード">
+	</p>
+	
+	<div class="container">
+		<div id="text_q"></div>
+	</div> 
+
+	<script>
+	(function() {
+		var memo = document.getElementById('memo');
+		var count = document.getElementById('count');
+		
+		function ElementRequestFullscreen(element){
+			var list = [
+				"requestFullscreen",
+				"webkitRequestFullScreen",
+				"mozRequestFullScreen",
+				"msRequestFullscreen"
+			];
+			var i;
+			var num = list.length;
+			for(i=0;i < num;i++){
+				if(element[list[i]]){
+					element[list[i]]();
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		function DocumentExitFullscreen(document_obj){
+			var list = [
+				"exitFullscreen",
+				"webkitExitFullscreen",
+				"mozCancelFullScreen",
+				"msExitFullscreen"
+			];
+			var i;
+			var num = list.length;
+			for(i=0;i < num;i++){
+				if(document_obj[list[i]]){
+					document_obj[list[i]]();
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		var full_screen = document.getElementById('full');
+		var normal_screen = document.getElementById('normal');
+		
+		if(window.addEventListener) {
+			full_screen.addEventListener("click", function (e) {
+				ElementRequestFullscreen(memo);
+			});
+			
+			memo.addEventListener("dblclick", function (e) {
+				DocumentExitFullscreen(document);
+				e.stopPropagation();
+			});
+			
+		}
+		
+		function countChars(textarea) {
+			count.innerHTML = textarea.value.length;
+		}			
+		
+		if (localStorage.getItem('memo')) {
+			memo.value = localStorage.getItem('memo');
+		}		
+		
+		
+		if (memo.attachEvent) {
+			//IE8以下
+			memo.attachEvent('onkeyup', function(e) {
+				countChars(e.srcElement);
+				localStorage.setItem('memo', e.srcElement.value);
+			});
+		} else {
+			//他のブラウザ
+			memo.addEventListener('keyup', function() {
+				countChars(this);	
+				localStorage.setItem('memo', this.value);
+			});
+		}
+		
+		if (clear.attachEvent) {
+			clear.attachEvent('onclick', function() {
+				memo.value = '';
+				count.innerHTML = 0;
+				localStorage.removeItem('memo');
+			});
+		} else {
+			clear.addEventListener('click', function() {
+				memo.value = '';
+				count.innerHTML = 0;
+				localStorage.removeItem('memo');
+			});
+		}
+		
+		countChars(memo);
+		quote();
+		memo.focus();
+	})();
+	
+
+	function quote() {	
+		var order = 0;
+		var q = new Array();		
+		q[0] = ["The only man who never makes mistakes is the man who never does anything.<br>-Theodore Roosevelt",1];
+		q[1] = ["I learned the courage was not the absence of fear, but the triumph over it.  The brave man is not he who does not feel afraid, but he who conquers that fear. <br>-Nelson Mandela",2];
+		q[2] = ["It always seems impossible until it’s done. <br>-Nelson Mandela",3];
+		q[3] = ["Obstacles are those frightful things you see when you take your eyes off your goal. <br>-Henry Ford",4];
+		q[4] = ["Nothing is particularly hard if you divide it into small jobs. <br>-Henry Ford",5];
+		q[5] = ["Before everything else, getting ready is the secret of success.<br> -Henry Ford",6];
+		q[6] = ["Most of the important things in the world have been accomplished by people who have kept on trying when there seemed to be no hope at all.<br> -Dale Carnegie",7];
+		q[7] = ["If you want to increase your success rate, double your failure rate.<br> -Thomas J. Watson",8];
+		q[8] = ["Believe, when you are most unhappy, that there is something for you to do in the world.  So long as you can sweeten another’s pain, life is not vain.<br> -Helen Keller",9];
+		q[9] = ["Never bend your head.  Always hold it high.  Look the world straight in the eye.<br> -Helen Keller",10];
+		q[10] = ["Life is an exciting business and most exciting when it is lived for others.<br> -Helen Keller",11];
+		q[11] = ["The best and most beautiful things in the world cannot be seen or even touched.  They must be felt with the heart.<br> -Helen Keller",12];
+		q[12] = ["No one can make you feel inferior without your consent.<br>  -Anna Eleanor Roosevelt",13];
+		q[13] = ["To handle yourself, use your head; to handle others, use heart.<br> -Anna Eleanor Roosevelt",14];
+		q[14] = ["Learn from the mistakes of others.  You can’t live long enough to make them all yourself.<br> -Anna Eleanor Roosevelt",15];
+		q[15] = ["Man errs so long as he strives.<br> -Johann Wolfgang von Goethe",16];
+		q[16] = ["What you get by achieving your goal is not as important as what you become by achieving your goals.<br> -Johann Wolfgang von Goethe",17];
+		q[17] = ["All the adversity I’ve had in mu life, all my troubles and obstacles, have strengthened me.  You may not realize it when it happens, but a kick in the teeth may be the best thing in the world for you.<br> -Walt Disney",18];
+		q[18] = ["It’s not whether you get knocked down, it’s whether you get up. <br>-Vince Lombardi",19];
+		q[19] = ["The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack of will.<br> -Vince Lombardi",20];
+		q[20] = ["Our greatest weakness lies in giving up.  The most certain way to succeed is always to try just one more time.<br> -Thomas A. Edison",21];
+		q[21] = ["Nearly every person who develops an idea works at it up to the point where it looks impossible, and then gets discouraged.  That’s not the place to become discouraged.<br> -Thomas A. Edison",22];
+		q[22] = ["Opportunity is missed by most people because it is dressed in overalls and looks like work.<br> -Thomas A. Edison",23];
+		q[23] = ["The best way to predict your future is to create it.<br> -Peter Drucker",24];
+		q[24] = ["Great spirits have always encountered violent opposition from mediocre minds.<br> -Albert Einsterin",25];
+		q[25] = ["By all means marry.  If you get a good wife, you will become happy; and if you get a bad one, you will become a philosopher.<br> -Socrates",26];
+		q[26] = ["Everyone wants to be appreciated, so if you appreciate someone, don’t keep it a secret.<br> -Mary Kay Ash",27];
+		q[27] = ["Believe in yourself.  Have faith in your abilities.  Without a humble but reasonable confidence in your own powers you cannot be successful or happy.<br> -Norman Vincent Peale",28];
+		
+		shuffle(q);
+		
+		var tx = document.getElementById('text_q');
+		tx.innerHTML = q[order][0];
+		order++;
+	}
+		
+		function shuffle(a){
+		    var i = a.length;
+		    while(i){
+		        var j = Math.floor(Math.random()*i);
+		        var t = a[--i];
+		        a[i] = a[j];
+		        a[j] = t;
+		    }
+		    return a;
+		}
+
+
+
+	
+	
+	</script>
+</body>
+</html>
