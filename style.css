@@ -20,6 +20,13 @@ h1 {
 }
 
 #container {
+}
+
+#wag {
+
+}
+
+#program {
 
 }
 
@@ -46,7 +53,7 @@ h1 {
 
 #headerNav li {
   float: left;
-  width: 33%;
+  width: 25%;
   text-align: center;
 }
 
