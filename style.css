@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+
+body {
+  font-family:  Arial, "Helvetica Neue", Helvetica, sans-serif;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+#header {
+
+}
+
+#footer {
+
+}
+
+#container {
+
+}
+
+#main {
+
+}
+
+#sub {
+
+}
+
+#footerNavLink {
+  float: right;
+}
+
+#headerNavLink {
+  float: right;
+}
+
+#headerNav ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+#headerNav li {
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+
+
+/* スマホ設定 */
+
+#headerNav {
+  display: none;
+}
+
+/* タブレット設定 */
+
+@media all and(min-width: 480px){
+  #footerNavLink {
+    display: none;
+  }
+
+  #headerNav {
+  display: block;
+  }
+
+  #footerNav {
+  display: none;
+  }
+}
+
+/* PCstyle */
+@media all and(min-width: 768px){
+  #container {
+    overflow: hidden;
+  }
+  #main {
+    float: left;
+    width: 78.0612245%; /* 765px/980px*100 */
+  }
+  #sub {
+     float: right;
+     width: 20.4081633% /* 200px/980px*100 */
+  }
+  #main {
+     float: left;
+     width: 
+  }
+}
+
+
+
+
+
+
+
+
