@@ -1,0 +1,246 @@
+/* @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css); */
+@font-face {
+	font-family: Hannari;
+	src: url(../fonts/Hannari.eot) format("truetype");
+	src: url(../fonts/Hannari.otf) format("truetype");
+}
+/* font */
+body {
+  font-family: Hannari;
+}
+h1, h2, h3, h4 {
+  font-family: Hannari;
+}
+
+
+html {
+	min-height: 100%;
+	position: relative;
+}
+body {
+	margin-bottom: 5em;
+	bottom: 0;
+	height: 100%;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2.5em;
+  margin: 20px auto;
+}
+
+#header{
+}
+#header>img{
+	display: block;
+	margin: 0 auto;
+	height: auto;
+	width: 260px;
+}
+
+.top {
+	height: 40px;
+	width: 60%;
+	margin: 15px auto;
+}
+
+.top > .intro {
+}
+.top > .intro > a {
+	margin: 0 auto;
+	width: 130px;
+	display: block;
+	font-size: 1.7em;
+	border-bottom: groove 1px gray;
+}
+
+.top > .intro > a:hover {
+	color: black;
+	opacity: 0.7;!important
+}
+
+.main {
+	width: 65%;
+	margin: 0 auto;
+}
+
+.main>.item {
+	margin-bottom: 0.8em;
+}
+
+.main>.item:hover {
+	/* background-color: Lavender; */
+}
+
+.main>.item> a {
+	display: block;
+  height: auto;
+	width: 80%;
+	text-align: center;
+  margin: 5px auto;
+}
+
+.main>.item>a>img {
+	border: solid 1px ivory;
+	display: block;
+  height: auto;
+	width: 100%;
+	/* border-radius: 15px; */
+	-webkit-transition:-webkit-transform 0.3s;
+	transition:transform 0.3s
+}
+/* .main>.item>a>img:hover {                   */
+/* 	opacity: 0.9;                              */
+/* 	border-radius: 15px;                       */
+/* 	-webkit-transform:scale(1.1) rotate(2deg); */
+/* 	transform:scale(1.1) rotate(2deg)          */
+/* }                                           */
+.main>.item>a{
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	/* overflow: hidden; */
+}
+
+.main>.item>.title {
+	text-align: center;
+	/* font-size: 50%; */
+	font-size: 1.2em;
+}
+.main>.item>.title>span {
+	border-bottom: groove 1px gray;
+}
+
+a {
+	text-decoration: none !important;
+	outline: none !important;
+	color: black;
+  text-align: center;
+}
+
+a:link {
+	color: black;
+}
+
+
+address {
+	font-style: normal;
+}
+
+
+
+#center-container {
+	padding-top: 20px;
+	/* padding-bottom: 20px; */
+}
+#center-container>.container {
+	/* margin-left: 30px; */
+}
+#center-container>.container>.row {
+}
+#center-container>.container>.row>div {
+	/* height: 600px; */
+	/* padding-top: 10px; */
+	/* padding-bottom: 30px; */
+	/* margin-top: 40px; */
+	/* margin-bottom: 100px; */
+	/* height: 500px; */
+}
+#center-container>.container>.row>div>a {
+	outline: none;
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	/* color: 	DarkSlateGray; */
+	width: 70%;
+	/* vertical-align: middle; */
+  /* box-shadow: 1px 1px 1px 10px #000;            */
+  /* -webkit-box-shadow: 10px 10px 10px 10px #000; */
+  /* -moz-box-shadow: 10px 10px 10px 10px #000;    */
+}
+#center-container>.container>.row>div>.title {
+	padding-top: 5px;
+	font-size: 1.5em;
+	text-align: center;
+}
+#center-container>.container>.row>div>a>img {
+	display: block;
+  height: auto;
+	width: 100%;
+	margin: 0 auto;
+	/* border-radius: 15px;                       */
+	/* -webkit-transition:-webkit-transform 0.3s; */
+	/* transition:transform 0.3s                  */
+}
+/* #center-container>.container>.row>div>a>img:hover { */
+/* 	opacity: 0.9;                                      */
+/* 	border-radius: 15px;                               */
+/* 	-webkit-transform:scale(1.1) rotate(1deg);         */
+/* 	transform:scale(1.1) rotate(1deg)                  */
+/* }                                                   */
+
+
+
+/* .bg-one {                                                */
+/* background:#efefef url('img/cable_tv/cable_tv_top.jpg'); */
+/* }                                                        */
+/* .bg-two {                                                */
+/* background:#efefef url('/assets/example/bg_dogcat.jpg'); */
+/* }                                                        */
+/* .bg-three {                                              */
+/* background:#efefef url('img/tabayama/shogi.png');        */
+/* }                                                        */
+/* .bg-four {                                               */
+/* background:#efefef url('/assets/example/bg1.jpg');       */
+/* }                                                        */
+
+.panel {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	font-size: 1.2em;
+}
+
+.contents  {
+  margin: 1em auto;
+	margin-top: 1.5em;
+	/* margin-bottom: 5em; */
+  line-height: 2em;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+.img-tmp {
+	border: 1px solid;
+	border-radius: 100px;
+	height: 200px;
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 200px;
+	vertical-align: middle;
+	margin-bottom: 50px;
+}
+
+
+footer {
+	width: 100%;
+	position: absolute;
+	/* height: 5em; */
+	/* bottom: -7em; */
+	bottom: 0;
+}
+footer>div {
+  background-color: #f5f5f5;
+	line-height: 3em;
+	text-align: center;
+	vertical-align: middle;
+	font-size: large;
+}
+
+
+
