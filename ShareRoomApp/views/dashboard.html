@@ -1,0 +1,76 @@
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<h2 class="title">進捗を管理します</h2><br>
+		<div class="row">
+			<div class="col-md-6">
+
+				<img src="images/face1.gif" style="width: 50px; height: 50px;">
+					<textarea rows="4" cols="50">comment欄です</textarea>
+<br><br><br>
+				<div class="panel panel-warning">
+				    <div class="panel-heading">
+				        <h3 class="panel-title">Aさんの本日の目標 <span class="badge">{{numPoster}}</span></h3>
+				    </div>
+				    <div class="panel-body">
+				    	<div ng-if="numPoster === 0"> </div>
+				    	<div id="goal"></div>
+			        <div ng-repeat="task in taskPoster">
+			        	<!-- <a ng-href="#/browse/{{task.taskId}}"> {{task.title}} </a> -->
+			        </div>
+				    </div>
+			        <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div id="items">
+      <label><input type="checkbox">唱題一時間</label><br>
+      <label><input type="checkbox">DUO一題</label><br>
+      <label><input type="checkbox">アルゴリズム一問</label><br>
+    </div>
+
+
+
+				</div>
+
+<p>週間目標（目標は全て自動挿入）</p>
+<p>月間目標</p>
+<p>年間目標</p>
+
+			</div>
+			<div class="col-md-6">
+
+								<img src="images/face2.gif" style="width: 50px; height: 50px;">
+					<textarea rows="4" cols="50">comment欄です</textarea>
+<br><br><br>
+				<div class="panel panel-success">
+				    <div class="panel-heading">
+				        <h3 class="panel-title">Bさんの本日の目標 <span class="badge">{{numRunner}}</span></h3>
+				    </div>
+				    <div class="panel-body">
+				    	<div ng-if="numRunner === 0"> </div>		    	
+				    <div id="goal2"></div>
+			        <div ng-repeat="task in taskRunner">
+			        	<!-- <a ng-href="#/browse/{{task.taskId}}"> {{task.title}} </a> -->
+			        </div>
+				    </div>
+			        <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div id="items2">
+      <label><input type="checkbox">読書(1/4冊)</label><br>
+      <label><input type="checkbox">金の英単語100問</label><br>
+      <label><input type="checkbox">唱題三時間</label><br>
+    </div>
+
+				</div>	
+				<p>週間目標</p>
+<p>月間目標</p>
+<p>年間目標</p>
+			
+			</div>
+		</div>
+
+	</div>	
+</div>
+
+<script src="scripts/js/progressbar.js"></script>
+

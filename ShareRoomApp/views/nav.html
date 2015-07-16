@@ -1,0 +1,77 @@
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavController">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div style="cursor:pointer;" class="navbar-brand page-scroll" href="">Share Room</div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
+
+      <ul class="nav navbar-nav navbar-left">
+        <!-- <li ng-show="signedIn()"><a href="" data-toggle="modal" data-target="#posModal">隣人に教える</a></li> -->
+        <!-- <li ng-show="signedIn()"><a href="#/browse">隣人と話す</a></li> -->
+        <li ng-show="signedIn()"　class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">       
+            共有スペース<span class="mdi-navigation-expand-more"></span></a>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#/dashboard">
+              <i class="mdi-action-done"></i> 進捗管理をする</a></li>            
+            <li><a href="#/browse">
+              <i class="mdi-action-comment"></i> 友だちと話す</a></li>    
+            <li><a href="#/schedule">
+              <i class="mdi-action-today"></i> 手帳を見る</a></li>            
+        
+          </ul>
+        </li> 
+
+        <li ng-show="signedIn()"　class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">       
+            個人の部屋<span class="mdi-navigation-expand-more"></span></a>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#/myroom">
+              <i class="mdi-action-perm_identity"></i> 自分の部屋</a></li>            
+            <li><a href="#/friend">
+              <i class="mdi-action-perm_identity"></i> 友だちの部屋</a></li>            
+          </ul>
+        </li> 
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="signedIn()"><a href="#/login">Login</a></li>        
+        <li ng-hide="signedIn()"><a href="#/register">Register</a></li>
+
+        <li ng-show="signedIn()" class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">
+            <img ng-src="{{currentUser.profile.gravatar}}" class="img-circle gravatar">
+            &nbsp;
+            {{currentUser.profile.name}}
+            <span class="mdi-navigation-expand-more"></span></a>
+          </a>
+          <ul class="dropdown-menu">
+<!--             <li><a href="#/dashboard">
+              <i class="mdi-action-assessment"></i> </a></li>            
+            <li><a href="" data-toggle="modal" data-target="#pasModal">
+              <i class="mdi-action-lock"></i> パスワードを変更する</a></li>
+ -->            <li><a href="" ng-click="logout()">
+              <i class="mdi-action-exit-to-app"></i> ログアウトする</a></li>
+          </ul>
+        </li> 
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+
+  <div ng-show="signedIn()" ng-include="'views/partials/changepass.html'"></div>
+  <div ng-show="signedIn()" ng-include="'views/partials/post.html'"></div>
+
+</nav>
+    <script src="../scripts/js/cbpAnimatedHeader.js"></script>
+

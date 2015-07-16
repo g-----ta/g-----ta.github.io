@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="author" content="">
+
+    <title>Share Room</title>
+
+     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css ">
+ 
+    <link href="bower_components/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.css" />
+
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.min.css " />
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.min.css" />
+
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+       
+    <link rel="stylesheet" href="styles/main.css">
+    
+  </head>
+  <body ng-app="ShareRoomApp" id="page-top" class="index">
+
+    <!-- Add your site or application content here -->
+    <!-- Toaster status: info, wait, error, success, warning -->
+    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
+    <div ng-include="'views/nav.html'"></div>
+    
+    <div class="jumbotron">
+        <br><br><br><br><br>
+        <div ng-view=""></div>    
+    </div>
+
+
+<!--    <script src="bower_components/jquery/dist/jquery.min.js "></script>    
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js "></script>
+-->
+    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
+    
+    <script src="https://cdn.firebase.com/js/client/2.1.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.9.1/angularfire.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.9/toaster.js"></script>
+
+    <script src="scripts/lib/moment.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.js"></script>
+
+<!--    <script src="bower_components/bootstrap-material-design/dist/js/material.min.js "></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
+-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/js/material.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/js/ripples.js"></script>
+
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<!--        
+        <script src="scripts/js/jqBootstrapValidation.js"></script>
+        <script src="scripts/js/contact_me.js"></script>
+-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="scripts/js/classie.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $.material.init();
+        });
+    </script>
+
+    <script src="scripts/app.js"></script>
+    
+    <script src="scripts/controllers/nav.js"></script>
+    <script src="scripts/controllers/task.js"></script>
+    <script src="scripts/controllers/auth.js"></script>
+    <script src="scripts/controllers/browse.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
+
+    <script src="scripts/services/auth.js"></script>
+    <script src="scripts/services/task.js"></script>
+    <script src="scripts/services/comment.js"></script>
+    <script src="scripts/services/offer.js"></script>
+    <script src="scripts/services/dashboard.js"></script>
+    
+</body>
+</html>
